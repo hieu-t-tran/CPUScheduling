@@ -1,0 +1,21 @@
+Script started on 2020-05-28 21:31:02+07:00 [TERM="xterm-256color" TTY="/dev/cons0" COLUMNS="120" LINES="30"]
+sh-4.4$ make
+gcc -g -Wall   -c -o mydispatcher.o mydispatcher.c
+gcc -g -Wall   -c -o myutility.o myutility.c
+gcc -g -Wall   -c -o spn.o spn.c
+gcc -g -Wall   -c -o srt.o srt.c
+gcc -g -Wall mydispatcher.o myutility.o spn.o srt.o -o mydispatcher
+sh-4.4$ ./mydispatcher input.dat SPN
+Average turnaround time = 7.600000
+Average normalized turnaround time = 1.843333
+Average waiting time = 3.600000
+sh-4.4$ ./mydispatcher input.dat SRT
+Average turnaround time = 7.200000
+Average normalized turnaround time = 1.593333
+Average waiting time = 3.200000
+sh-4.4$ make clean
+rm -fR *.o mydispatcher
+sh-4.4$ exit
+exit
+
+Script done on 2020-05-28 21:31:44+07:00 [COMMAND_EXIT_CODE="0"]

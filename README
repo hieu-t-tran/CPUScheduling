@@ -1,0 +1,71 @@
+- Author: Hieu Tran
+- Course: COMP 354: Operating Systems
+- Instructor: Shikha Mittal
+
+
+
+# DESCRIPTION:
+This C program illustrates two CPU scheduling policies, Shortest Process Next (SPN) and Shortest Remaining Time (SRT). It reads data about the processes from the input file "input.dat" and
+print out the results of the scheduling of those processes on the screen and on the output file "output.dat".
+
+
+
+# INPUT:
+The input should be in the file named "input.dat" in this directory. The format of this input file is some number of lines of two space-separated non-negative integers, such that the first
+integer of a line is never larger than the first integer of the next line. The following is an example:
+
+0 3
+2 6
+4 4
+6 5
+8 2
+
+Each line represents a process to be scheduled, with the line number being the process ID, the first integer being the arrival time and the second integer being the service time.
+
+
+
+# OUTPUT:
+The output is written on the file named "output.dat" in this directory. If this file does not exist, it is created; otherwise, its content is discarded before writing the output. The
+written output in this file contains information about how each process was scheduled, including the arrival time (A), service time (S), waiting time (W), finish time (F) and turnaround
+time (T). For example, the following is the content of "output.dat" after running the program with the input above and using the SRT scheduling policy:
+
+1 runs 0-3: A=0, S=3, W=0, F=3, T=3
+2 runs 3-4
+3 runs 4-8: A=4, S=4, W=0, F=8, T=4
+5 runs 8-10: A=8, S=2, W=0, F=10, T=2
+2 runs 10-15: A=2, S=6, W=7, F=15, T=13
+4 runs 15-20: A=6, S=5, W=9, F=20, T=14
+
+Additionally, the program also prints out the global average turnaround time, global average normalized turnaround time and global average waiting time on the screen. For example, for the
+input above and using the SRT scheduling policy, the output on the screen is:
+
+Average turnaround time = 7.200000
+Average normalized turnaround time = 1.593333
+Average waiting time = 3.200000
+
+
+
+# USAGE INSTRUCTIONS:
+1. Make sure the input file "input.dat" exists in the current directory, with the correct format specified above.
+
+2. Open the terminal and go to the current directory.
+
+3. Compile all source code and generate the executable with the makefile by typing:
+	make
+   Alternatively, if not using the makefile, we can also compile all source code and generate the executable by typing:
+	gcc -o mydispatcher mydispatcher.c myutility.c spn.c srt.c
+
+4.
+- To run the program with the SPN scheduling policy, type:
+	./mydispatcher input.dat SPN
+
+- To run the program with the SRT scheduling policy, type:
+	./mydispatcher input.dat SRT
+
+5. (Only if using the makefile in step 3) After running, clean up all object files and executables by typing:
+	make clean
+
+
+
+# SUPPORT INFORMATION:
+Currently, there is no known issue.
