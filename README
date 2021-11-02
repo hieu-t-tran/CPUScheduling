@@ -1,9 +1,3 @@
-- Author: Hieu Tran
-- Course: COMP 354: Operating Systems
-- Instructor: Shikha Mittal
-
-
-
 # DESCRIPTION:
 This C program illustrates two CPU scheduling policies, Shortest Process Next (SPN) and Shortest Remaining Time (SRT). It reads data about the processes from the input file "input.dat" and
 print out the results of the scheduling of those processes on the screen and on the output file "output.dat".
@@ -64,8 +58,3 @@ Average waiting time = 3.200000
 
 5. (Only if using the makefile in step 3) After running, clean up all object files and executables by typing:
 	make clean
-
-
-
-# SUPPORT INFORMATION:
-Currently, there is no known issue.
